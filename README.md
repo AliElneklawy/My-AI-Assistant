@@ -38,10 +38,10 @@ GEMINI_API_KEY=your_gemini_api_key
 
 ## Usage
 
-1. Set up your training data:
-  - Place personal documents (PDF/TXT) in the `data` directory
-  - Configure personal website URLs in the bot initialization
-  - Edit the prompt in `train_gemini.py`
+1. Set up:
+      - Place personal documents (PDF/TXT) in the `data` directory
+      - Configure personal website URLs in the bot initialization
+      - Edit the prompt in `train_gemini.py`
 
 2. Run the bot:
 ```bash
@@ -52,3 +52,4 @@ python bot.py
 
  - `bot.py`: Handles Telegram bot setup and message routing
  - `train_gemini.py`: Manages AI model training, knowledge base creation, and response generation
+ - `main.py`: Start the bot
