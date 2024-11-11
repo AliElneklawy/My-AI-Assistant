@@ -39,8 +39,9 @@ GEMINI_API_KEY=your_gemini_api_key
 ## Usage
 
 1. Set up your training data:
- - Place personal documents (PDF/TXT) in the `data` directory
- - Configure personal website URLs in the bot initialization
+  - Place personal documents (PDF/TXT) in the `data` directory
+  - Configure personal website URLs in the bot initialization
+  - Edit the prompt in `train_gemini.py`
 
 2. Run the bot:
 ```bash
