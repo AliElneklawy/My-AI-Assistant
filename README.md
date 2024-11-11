@@ -22,7 +22,7 @@ A sophisticated Telegram chatbot powered by Google's Gemini AI that serves as a 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/AliElneklawy/personal-assistant-bot.git
+git clone https://github.com/AliElneklawy/My-AI-Assistant.git
 cd personal-assistant-bot
 ```
 
