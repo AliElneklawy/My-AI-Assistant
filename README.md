@@ -32,7 +32,7 @@ pip install -r requirements.txt
 ```
 3. Create a .env file in the project root directory with the following variables:
 ```bash
-BOT_TOKEN=your_telegram_bot_token
+MY_BOT_TOKEN=your_telegram_bot_token
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
