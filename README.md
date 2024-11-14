@@ -1,5 +1,9 @@
 # AI-Powered Personal Assistant Telegram Bot
 
+![image](https://github.com/user-attachments/assets/6fd1d0d9-7540-4dc2-9606-d0b0b4925503)
+
+
+
 A sophisticated Telegram chatbot powered by Google's Gemini AI that serves as a virtual personal assistant. The bot is trained on custom knowledge bases (websites, documents, and personal information) to provide accurate information and responses about me while maintaining natural conversation flow.
 
 ## Features
