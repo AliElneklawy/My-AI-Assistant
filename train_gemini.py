@@ -17,7 +17,7 @@ class Gemini:
     def __init__(self, gemini_api, website_url, training_data_dir) -> None:
 
         self.data: str = "" # store trainig text
-        self.chat_history = []
+        self.user_chat_histories = {}
 
         print('Gemini Configuration....')
         genai.configure(api_key=gemini_api)
@@ -29,6 +29,10 @@ class Gemini:
         print('Loading knowledge base...')
         self.knowledge_base = self._load_knowledge_base(website_url, training_data_dir)
 
+
+    def initialize_user_chat(self, user_id):
+        if user_id not in self.user_chat_histories:
+            self.user_chat_histories[user_id] = []
 
     def get_data_from_website(self, url):
         """
@@ -192,11 +196,24 @@ class Gemini:
 
 
 
-    def get_response(self, query: str) -> str:
+    def get_response(self, query: str, user_id) -> str:
+
+        if user_id not in self.user_chat_histories:
+            self.initialize_user_chat(user_id)
+
         context = self._find_relevant_context(query)
 
         prompt = f""" 
-        Your prompt....
+        your_prompt...
+
+        Context: {context}
+
+        Previous conversation:
+        {self.user_chat_histories[user_id][-3:] 
+         if self.user_chat_histories[user_id] 
+         else 'No previous conversation'}
+
+        Question: {query}
         """
 
         try:
@@ -206,6 +223,7 @@ class Gemini:
         except Exception as e:
             response_txt = f"Sorry, I couldn't process this request. Error: {str(e)}"
 
-        self.chat_history.append({'question': query, 'answer': {response_txt}})
+        self.user_chat_histories[user_id].append({
+            'question': query, 'answer': {response_txt}})
 
         return response_txt

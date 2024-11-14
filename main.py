@@ -6,7 +6,7 @@ if __name__ == "__main__":
     load_dotenv()
     
     url = 'your_url'
-    training_data_dir = 'your_data_directory'
+    training_data_dir = 'your_training_data_dir'
 
     bot_token = os.getenv('MY_BOT_TOKEN')
     gemini_api = os.getenv('GEMINI_API')
